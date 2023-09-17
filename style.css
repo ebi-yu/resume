@@ -154,3 +154,7 @@ ol.gradient-list > li:nth-child(10n + 10):before {
 ol.gradient-list > li + li {
   margin-top: 2rem;
 }
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
