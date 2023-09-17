@@ -3,7 +3,12 @@
   <head>
     <title>Mindmap Wiki</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      .container {
+        width: 600px;
+        margin: 0 auto;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -21,7 +26,7 @@
         return title;
       }
 
-      const data = [HTML_FILE_LIST];
+      const data = ["./html/sample.md.html"];
       const listElement = document.getElementById("list");
 
       const listItems = data
