@@ -1,1 +1,50 @@
-<h1>test</h1>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Mindmap Wiki</title>
+    <meta charset="UTF-8" />
+    <style>
+      .container {
+        width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ebi-yu Wiki</h1>
+      <ol class="gradient-list" id="list"></ol>
+    </div>
+    <script>
+      function generateTitle(filePath) {
+        let title = filePath.split("/").slice(-1)[0].split(".")[0];
+
+        if (title.includes("_")) {
+          title = title.charAt(0).toUpperCase() + title.slice(1);
+          return title.split("_").join(" ");
+        }
+        return title;
+      }
+
+      const data = [HTML_FILE_LIST];
+      const listElement = document.getElementById("list");
+
+      const listItems = data
+        .map((item) => {
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.setAttribute("href", item);
+          link.setAttribute("target", "_blank");
+
+          const title = generateTitle(item);
+          link.textContent = title;
+
+          listItem.appendChild(link);
+          return listItem.outerHTML;
+        })
+        .join("");
+
+      listElement.innerHTML = listItems;
+    </script>
+  </body>
+</html>
