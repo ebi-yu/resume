@@ -16,11 +16,11 @@
   height: 100vh;
 }
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.2.0/dist/style.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.13.2/dist/style.min.css">
 </head>
 <body>
 <svg id="mindmap"></svg>
-<script src="https://cdn.jsdelivr.net/npm/d3@6.7.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.7"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.2.0/dist/index.umd.min.js"></script><script>(r => {
+<script src="https://cdn.jsdelivr.net/npm/d3@6.7.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.13.5"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.13.2/dist/index.umd.min.js"></script><script>(r => {
           setTimeout(r);
         })(() => {
   const {
@@ -32,11 +32,9 @@
   const el = toolbar.render();
   el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
   document.body.append(el);
-})</script><script>((getMarkmap, getOptions, data) => {
-        const {
-          Markmap
-        } = getMarkmap();
-        window.mm = Markmap.create('svg#mindmap', getOptions == null ? void 0 : getOptions(), data);
-      })(() => window.markmap,null,{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"h1 Heading","c":[{"t":"heading","d":2,"p":{"lines":[2,3]},"v":"h2 Heading","c":[{"t":"heading","d":3,"p":{"lines":[4,5]},"v":"h3 Heading","c":[{"t":"list_item","d":5,"p":{"lines":[6,7]},"v":"item 1"},{"t":"list_item","d":5,"p":{"lines":[7,8]},"v":"item 2"},{"t":"list_item","d":5,"p":{"lines":[8,9]},"v":"item 3"}]},{"t":"heading","d":3,"p":{"lines":[10,11]},"v":"h3 Heading","c":[{"t":"list_item","d":5,"p":{"lines":[12,13]},"v":"item 1"},{"t":"list_item","d":5,"p":{"lines":[13,14]},"v":"item 2"}]}]}]},{"t":"heading","d":1,"p":{"lines":[15,16]},"v":"h1 Heading","c":[{"t":"heading","d":2,"p":{"lines":[17,18]},"v":"h2 Heading"}]},{"t":"heading","d":1,"p":{"lines":[19,20]},"v":"h1 Heading"}],"p":{}})</script>
+})</script><script>((getMarkmap, getOptions, root, jsonOptions) => {
+        const markmap = getMarkmap();
+        window.mm = markmap.Markmap.create('svg#mindmap', (getOptions || markmap.deriveOptions)(jsonOptions), root);
+      })(() => window.markmap,null,{"type":"root","depth":0,"content":"","children":[{"type":"heading","depth":1,"payload":{"lines":[0,1]},"content":"h1 Heading","children":[{"type":"heading","depth":2,"payload":{"lines":[2,3]},"content":"h2 Heading","children":[{"type":"heading","depth":3,"payload":{"lines":[4,5]},"content":"h3 Heading","children":[{"type":"list_item","depth":4,"payload":{"lines":[6,7]},"content":"item 1"},{"type":"list_item","depth":4,"payload":{"lines":[7,8]},"content":"item 2"},{"type":"list_item","depth":4,"payload":{"lines":[8,9]},"content":"item 3"},{"type":"list_item","depth":4,"payload":{"lines":[9,10]},"content":"item 4"},{"type":"list_item","depth":4,"payload":{"lines":[10,11]},"content":"item 5"}]},{"type":"heading","depth":3,"payload":{"lines":[12,13]},"content":"h3 Heading","children":[{"type":"list_item","depth":4,"payload":{"lines":[14,15]},"content":"item 1"},{"type":"list_item","depth":4,"payload":{"lines":[15,16]},"content":"item 2"}]}]}]},{"type":"heading","depth":1,"payload":{"lines":[17,18]},"content":"h1 Heading","children":[{"type":"heading","depth":2,"payload":{"lines":[19,20]},"content":"h2 Heading"}]},{"type":"heading","depth":1,"payload":{"lines":[21,22]},"content":"h1 Heading"}],"payload":{}},null)</script>
 </body>
 </html>
