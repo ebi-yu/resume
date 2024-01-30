@@ -1,0 +1,30 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Table from "../components/Table.astro"
+import Profile from "../components/md-component/profile.md"
+
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title='frontmatter.title' description='test' />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <Profile />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style scoped>
+h3 {
+  padding-bottom: 10px;
+}
+
+</style>

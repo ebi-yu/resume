@@ -1,0 +1,30 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+
+const pageTitle = "Ebi-yu Resume";
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main class="flex flex-col justify-center">
+      <h1 class="text-center">{pageTitle}</h1>
+	  <br>
+      <img
+        class="h-96 w-fit justify-center m-auto"
+        src="https://3.bp.blogspot.com/-BUmFfBb4prg/UnXnGjj-pII/AAAAAAAAaHg/7BUA37f4Kt8/s800/fish_ebi.png"
+        alt="Grapefruit slice atop a pile of other slices"
+      />
+    </main>
+    <Footer />
+  </body>
+</html>

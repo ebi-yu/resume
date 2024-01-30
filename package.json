@@ -1,0 +1,37 @@
+{
+  "name": "astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@ashwamegh/vue-link-preview": "^3.3.0",
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/mdx": "^2.1.0",
+    "@astrojs/rss": "^4.0.3",
+    "@astrojs/sitemap": "^3.0.5",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vue": "^4.0.8",
+    "@element-plus/icons-vue": "^2.3.1",
+    "astro": "^4.2.4",
+    "element-plus": "^2.5.3",
+    "flowbite": "^2.2.1",
+    "link-preview-generator": "^1.1.0",
+    "remark-breaks": "^4.0.0",
+    "tailwindcss": "^3.4.1",
+    "theme-change": "^2.5.0",
+    "typescript": "^5.3.3",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-icons": "^0.18.2",
+    "unplugin-vue-components": "^0.26.0",
+    "vue": "^3.4.15"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10"
+  }
+}
