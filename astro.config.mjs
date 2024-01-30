@@ -10,7 +10,7 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://ebi-yu.github.io/",
-  base: "/src/pages",
+  base: "my_resume",
   integrations: [
     mdx(),
     sitemap(),
