@@ -3,6 +3,12 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
-  }
+    "allowSyntheticDefaultImports": true,
+    // これをいれないと、pnpm checkでdistも見てしまう
+    // https://github.com/withastro/language-tools/issues/643
+    "outDir": "dist"
+  },
+  // これをいれないと、pnpm checkでdistとpublicも見てしまう
+  // https://github.com/withastro/language-tools/issues/643
+  "exclude": ["dist", "public"]
 }
