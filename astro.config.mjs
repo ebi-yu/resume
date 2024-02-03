@@ -3,8 +3,6 @@ import mdx from "@astrojs/mdx";
 import vue from "@astrojs/vue";
 import sitemap from "@astrojs/sitemap";
 
-import remarkBreaks from "remark-breaks";
-
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
@@ -18,7 +16,7 @@ export default defineConfig({
     tailwind(),
   ],
   markdown: {
-    remarkPlugins: [remarkBreaks],
+    remarkPlugins: [],
     extendDefaultPlugins: true,
   },
   vite: {
