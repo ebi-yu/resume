@@ -2,29 +2,27 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-
-
-
-const pageTitle = "Ebi-yu Resume";
+import Profile from "../components/mdx-component/profile.mdx"
 
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead/>
+    <BaseHead />
   </head>
   <body>
     <Header />
-    <main class="flex flex-col justify-center">
-      <h1 class="text-center">{pageTitle}</h1>
-	  <br>s
-      <img
-        class="h-96 w-fit justify-center m-auto"
-        src="https://raw.githubusercontent.com/ebi-yu/ebi-yu.github.io/main/public/ebi.png"
-        alt="Grapefruit slice atop a pile of other slices"
-      />
+    <main>
+      <Profile />
     </main>
     <Footer />
   </body>
 </html>
+
+<style scoped>
+h3 {
+  padding-bottom: 10px;
+}
+
+</style>

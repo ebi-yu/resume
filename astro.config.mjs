@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import vue from "@astrojs/vue";
 import sitemap from "@astrojs/sitemap";
 
 import tailwind from "@astrojs/tailwind";
@@ -9,12 +8,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://ebi-yu.github.io/",
   base: "",
-  integrations: [
-    mdx(),
-    sitemap(),
-    vue({ appEntrypoint: "/src/pages/_app" }),
-    tailwind(),
-  ],
+  integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
     remarkPlugins: [],
     extendDefaultPlugins: true,
@@ -22,7 +16,7 @@ export default defineConfig({
   vite: {
     plugins: [],
     ssr: {
-      noExternal: ["element-plus"],
+      noExternal: [],
     },
   },
 });

@@ -1,18 +1,35 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE,TWITTER_URL } from '../consts';
-import { ViewTransitions } from "astro:transitions";
+import { SITE_TITLE, TWITTER_URL } from '../consts';
+
 ---
 
 <header>
 	<nav>
-		<ViewTransitions />
+		<!-- ViewTransitionsコンポーネントを使用する場合は、適切に配置してください -->
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="#profile">自己紹介</HeaderLink>
+			<HeaderLink href="#career">経歴</HeaderLink>
+			<HeaderLink href="#skill">技能一覧</HeaderLink>
+			<HeaderLink href="#other">その他活動</HeaderLink>
 		</div>
 	</nav>
 </header>
+<script type="module">
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('a[href^="#"]'); // IDへのリンクをすべて選択
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const sectionId = this.getAttribute('href').substring(1);
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+});
+</script>
 <style>
 	header {
 		position: fixed; /* ヘッダーを固定 */
