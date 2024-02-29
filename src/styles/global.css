@@ -157,3 +157,21 @@ hr {
   /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
   white-space: nowrap;
 }
+
+@media (max-width: 600px) {
+  header {
+    position: static; /* モバイルでは固定位置を解除 */
+  }
+  body {
+    font-size: 16px;
+  }
+
+  /* モバイル向けのナビゲーションスタイル */
+  nav {
+    flex-direction: column; /* リンクを縦に並べる */
+  }
+
+  .knowledge-link-container {
+    display: none;
+  }
+}
