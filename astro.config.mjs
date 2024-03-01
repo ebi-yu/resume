@@ -13,6 +13,9 @@ export default defineConfig({
     remarkPlugins: [],
     extendDefaultPlugins: true,
   },
+  redirects: {
+    "/about": "/",
+  },
   vite: {
     plugins: [],
     ssr: {
