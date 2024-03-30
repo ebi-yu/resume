@@ -1,6 +1,5 @@
 ---
 import { TWITTER_URL,GIT_HUB_URL, QITA_URL, ZEEN_URL } from "../consts";
-import Image from "../components/Image.astro";
 
 
 const today = new Date();
@@ -26,10 +25,10 @@ const today = new Date();
 			>
 		</a>
 		<a href={QITA_URL} target="_blank">
-			<Image  width="32" height="32"  src="../../public/qiita-icon.png">
+			<img  width="32" height="32"  src="/qiita-icon.png">
 		</a>
 		<a href={ZEEN_URL} target="_blank">
-			<Image  width="32" height="32"  src="../../public/zeen-icon.svg">
+			<img  width="32" height="32"  src="/public/zeen-icon.svg">
 		</a>
 	</div>
 </footer>
