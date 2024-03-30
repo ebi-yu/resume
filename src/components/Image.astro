@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import path from 'path';
+
+type Props = HTMLAttributes<'img'>;
+
+const { src: _src, ...attrs } = Astro.props;
+
+const src = (() => {
+  if (typeof _src === 'string' && _src.startsWith('/')) {
+    return path.relative(Astro.url.pathname, _src);
+  }
+  return _src;
+})();
+---
+
+<img src={src} {...attrs}>
+  <slot />
+</img>

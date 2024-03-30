@@ -1,18 +1,16 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE, TWITTER_URL } from '../consts';
 
 ---
 
 <header>
 	<nav>
-		<!-- ViewTransitionsコンポーネントを使用する場合は、適切に配置してください -->
 		<div class="internal-links">
 			<HeaderLink href="#profile">Profile</HeaderLink>
 			<HeaderLink href="#career">Career</HeaderLink>
 			<HeaderLink href="#activities">Activities</HeaderLink>
 			<HeaderLink href="#skils">Skils</HeaderLink>
-			<HeaderLink href="#article">Article</HeaderLink>
+
 		</div>
 	</nav>
 </header>
@@ -26,56 +24,40 @@ document.addEventListener('DOMContentLoaded', () => {
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.history.pushState({}, '', '#' + sectionId);
       }
     });
   });
 });
 </script>
 <style>
-	header {
-		position: fixed; /* ヘッダーを固定 */
-		top: 0; /* 画面の上部から */
-		left: 0; /* 画面の左端から */
-		width: 100%; /* 幅を100%に設定 */
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-		z-index: 1000; /* 他の要素より前面に表示 */
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	body {
-	padding-top: 60px; /* ヘッダーの高さに応じて調整 */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav a {
+  padding: 1em 0.5em;
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+}
+nav a.active {
+  text-decoration: none;
+  border-bottom-color: var(--accent);
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(var(--black), 5%);
+  z-index: 1000;
 }
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 80%) {
-		.social-links {
-			display: none;
-		}
-	}
+@media (prefers-color-scheme: dark) {
+  header {
+    background-color: rgb(var(--dark));
+  }
+}
 </style>

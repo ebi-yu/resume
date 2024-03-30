@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/PostLayout.astro
+layout: ../layouts/PostLayout.astro
 title: "プロフィール"
 pubDate: 2022-07-01
 description: ""
@@ -10,12 +10,14 @@ image:
 tags: ["index"]
 ---
 
+import Image from "../components/Image.astro";
+import styles from "../styles/markdown.css";
+
 <h1 class="text-center">Ebi-yu Site</h1>
 
-<img
+<Image
   class="h-48 sm:h-96  w-fit justify-center m-auto"
-  src="https://raw.githubusercontent.com/ebi-yu/ebi-yu.github.io/main/public/ebi.png"
-  alt="Grapefruit slice atop a pile of other slices"
+  src="../../public/my_icon.png"
 />
 
 <div id="profile" />
@@ -60,9 +62,7 @@ tags: ["index"]
 
 - [OSS の knowledge を社内サーバに建てて運用](https://github.com/ebi-yu/knowledge)
 
-  <div class="knowledge-link-container">
-    ![knowledge](https://raw.githubusercontent.com/ebi-yu/ebi-yu.github.io/main/public/knowledge-site.png)
-  </div>
+  <Image src="../../public/knowledge-site.png" />
 
 <div id="skils" />
 <br />
@@ -78,20 +78,3 @@ tags: ["index"]
 | フロントエンド | web クライアント開発(Nuxt.js)            | 半年   |
 
 実務で 2 か月以上触ったことのある技術は[こちらを参照](https://stackshare.io/ebidevelopper1088/my-stack/main)
-
-<div id="article" />
-<br />
-## **Article**
-
-<br />
-##### [Qita への記事投稿](https://qiita.com/Nicasdream0){" "}
-
-- [ナレッジ共有 OSS「Knowledge」をデバッグする](https://qiita.com/Nicasdream0/items/bd977594906e70be16cd)
-- [Typescript で型を定義するときは interface が基本的には推奨されているらしい](https://qiita.com/Nicasdream0/items/c0333a8a2a63d666fa8e)
-
-<br />
-
-##### [Zeen へのスクラップ投稿](https://zenn.dev/ebi_yu?tab=scraps)
-
-- [JavaScript のモジュールについてまとめてく: 歴史編](https://zenn.dev/ebi_yu/scraps/db4c7d1f3e883a)
-- [single-spa についてまとめる](https://zenn.dev/ebi_yu/scraps/9dc32e87195439)

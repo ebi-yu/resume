@@ -1,5 +1,7 @@
 ---
-import { TWITTER_URL,GIT_HUB_URL } from "../consts";
+import { TWITTER_URL,GIT_HUB_URL, QITA_URL, ZEEN_URL } from "../consts";
+import Image from "../components/Image.astro";
+
 
 const today = new Date();
 ---
@@ -8,7 +10,6 @@ const today = new Date();
 	&copy; {today.getFullYear()} Ebi-yu. All rights reserved.
 	<div class="social-links">
 		<a href={TWITTER_URL} target="_blank">
-			<span class="sr-only">Follow Astro on Twitter</span>
 			<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/twitter"
 				><path
 					fill="currentColor"
@@ -17,7 +18,6 @@ const today = new Date();
 			>
 		</a>
 		<a href={GIT_HUB_URL} target="_blank">
-			<span class="sr-only">Go to Astro's GitHub repo</span>
 			<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github"
 				><path
 					fill="currentColor"
@@ -25,13 +25,18 @@ const today = new Date();
 				></path></svg
 			>
 		</a>
+		<a href={QITA_URL} target="_blank">
+			<Image  width="32" height="32"  src="../../public/qiita-icon.png">
+		</a>
+		<a href={ZEEN_URL} target="_blank">
+			<Image  width="32" height="32"  src="../../public/zeen-icon.svg">
+		</a>
 	</div>
 </footer>
+
 <style>
 	footer {
 		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
 		text-align: center;
 	}
 	.social-links {
@@ -48,3 +53,4 @@ const today = new Date();
 		color: rgb(var(--gray-dark));
 	}
 </style>
+

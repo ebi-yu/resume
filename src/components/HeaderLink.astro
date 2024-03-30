@@ -21,4 +21,15 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 		font-weight: bolder;
 		text-decoration: underline;
 	}
+	a:hover {
+		color: rgb(var(--white-hover));
+	}
+	@media (prefers-color-scheme: dark) {
+    a:hover {
+		color: rgb(var( --dark-hover));
+	}
+	header {
+    background-color: rgb(var(--dark));
+}
+}
 </style>
