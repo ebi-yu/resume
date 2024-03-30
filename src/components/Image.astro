@@ -1,17 +1,13 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
-import path from 'path';
 
-type Props = HTMLAttributes<'img'>;
+type Props = HTMLAttributes<'img'> & { src: string };
 
 const { src: _src, ...attrs } = Astro.props;
 
-const src = (() => {
-  if (typeof _src === 'string' && _src.startsWith('/')) {
-    return path.relative(Astro.url.pathname, _src);
-  }
-  return _src;
-})();
+// GitHub Pagesのデプロイを考慮した画像パス
+const basePath = import.meta.env.BASE_URL;
+const src = basePath + _src;
 ---
 
 <img src={src} {...attrs}>
