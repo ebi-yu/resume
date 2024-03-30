@@ -10,10 +10,11 @@
 
 :root {
   --dark: 33, 33, 33;
+  --gray: 112, 128, 144;
   --dark-hover: 170, 170, 170;
   --white-hover: 54, 69, 79;
-  --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
-    0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
+  --white-header: 224, 224, 224;
+  --dark-header: 44, 44, 44;
 }
 @font-face {
   font-family: "Atkinson";
